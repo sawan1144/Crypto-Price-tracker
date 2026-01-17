@@ -9,7 +9,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-50 bg-opacity-75 backdrop-blur-lg bg-[]'>
+        <div className='sticky top-0 z-50 backdrop-blur-lg bg-gray-500/25'>
             <div className='flex justify-between items-center py-5 px-25'>
                 <img src="/imgs/logo.png" alt="Logo" className='h-10' />
                 <div className='flex gap-10 cursor-pointer'>
