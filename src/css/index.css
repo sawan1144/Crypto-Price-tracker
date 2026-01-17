@@ -1,12 +1,15 @@
 @import 'tailwindcss';
+@import './satoshi.css';
 
-*{
+* {
    box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
    height: 100%;
    width: 100%;
    background-color: black;
    color: white;
+   font-family: 'Satoshi-Variable', 'Satoshi-Regular', sans-serif;
 }
