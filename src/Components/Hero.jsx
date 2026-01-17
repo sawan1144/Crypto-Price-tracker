@@ -5,7 +5,7 @@ const Hero = () => {
   const [value, setValue] = useState('')
 
   return (
-    <div className="h-[89vh] w-full bg-cover bg-center" style={{ backgroundImage: "url('/imgs/hero.jpg')" }}>
+    <div className="h-[91vh] w-full bg-cover bg-center" style={{ backgroundImage: "url('/imgs/hero.jpg')" }}>
       <div className='h-full flex flex-col justify-center items-center gap-15'>
         <div className='flex flex-col items-center gap-4'>
           <h1 className='text-[4rem] font-medium text-center'>Find Real-Time <span className="italic font-light">Crypto</span> Prices</h1>

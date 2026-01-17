@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className='bg-[#0a0a0a] text-white py-8 px-25 border-t border-gray-400'>
             <div className='flex justify-between'>
                     <div className='flex flex-col gap-3'>
-                        <h4 className='text-gray-400 text-sm mb-2'>CryptoPlace</h4>
+                        <h4 className='text-gray-400 text-sm mb-2'>CoinTracker</h4>
                         <a className='text-sm hover:text-gray-300'>How it works</a>
                         <a className='text-sm hover:text-gray-300'>Pricing</a>
                         <a className='text-sm hover:text-gray-300'>Full service</a>
