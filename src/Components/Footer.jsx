@@ -35,7 +35,7 @@ const Footer = () => {
                     </button>
                 </div>
             </div>
-            <div className='text-[14rem] text-center font-bold transform scale-y-108'>CoinTracker</div>
+            <div className='text-[15vw] text-center font-bold transform scale-y-108'>CoinTracker</div>
             <div className='text-center text-sm border-t border-gray-400 p-2'>Copyright @ 2026, Cryptoplace - All Right Reserved.</div>
         </footer>
     )

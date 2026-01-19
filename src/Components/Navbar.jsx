@@ -1,28 +1,34 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { HiArrowUpRight, HiChevronDown } from 'react-icons/hi2'
+import { CoinContext } from '../context/CoinContext'
 
 const Navbar = () => {
     const [show, setShow] = useState(false)
+    const {setCurrency} = useContext(CoinContext)
 
-    function clickHandler(){
-        setShow((p)=>!p)
+    function clickHandler() {
+        setShow((p) => !p)
+    }
+
+    function currencyHandler(c){
+        setCurrency(c)
     }
 
     return (
         <div className='sticky top-0 z-50 backdrop-blur-lg bg-gray-500/25'>
             <div className='flex justify-between items-center py-4 px-25'>
                 <img src="/imgs/logo.png" alt="Logo" className='h-8' />
-                <div className='flex gap-10 cursor-pointer text-sm font-semibold'>
-                    <button>Home</button>
-                    <button>Features</button>
-                    <button>Pricing</button>
-                    <button>Blog</button>
+                <div className='flex gap-10 text-sm font-semibold'>
+                    <button className='cursor-pointer'>Home</button>
+                    <button className='cursor-pointer'>Features</button>
+                    <button className='cursor-pointer'>Pricing</button>
+                    <button className='cursor-pointer'>Blog</button>
                 </div>
                 <div className='flex items-center gap-8'>
                     <div>
                         <button className='flex items-center gap-1 border-2 px-2 rounded-xl' onClick={clickHandler}>USD <HiChevronDown /></button>
                         {show && <div className='absolute top-15 bg-white text-black py-3 rounded-lg transition ease-in duration-200'>
-                            <div className='px-3 hover:bg-gray-500 cursor-pointer'>USD</div>
+                            <div onClick={currencyHandler(usd)} className='px-3 hover:bg-gray-500 cursor-pointer'>USD</div>
                             <div className='px-3 hover:bg-gray-500 cursor-pointer'>INR</div>
                             <div className='px-3 hover:bg-gray-500 cursor-pointer'>EUR</div>
                         </div>}
