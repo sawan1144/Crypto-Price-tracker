@@ -7,13 +7,13 @@ const Usefetch = () => {
 
     useEffect(() => {
         const options = { method: 'GET', headers: { 'x-cg-demo-api-key': 'CG-iTf14Dm7pF7ZcpkM5qQAEnUr' } };
-        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}&ids=bitcoin&names=Bitcoin&symbols=btc&category=layer-1&price_change_percentage=1h`, options)
+        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}&order=market_cap_desc&per_page=100&page=1&sparkline=false`, options)
             .then(res => res.json())
             .then(res => setAllcoin(res))
             .catch(err => console.error(err));
     }, [currency])
 
-    return {allcoin, setCurrency}
+    return {allcoin, currency, setCurrency}
 }
 
 export default Usefetch
