@@ -1,14 +1,15 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 import Usefetch from '../customhooks/Usefetch';
 
 export const CoinContext = createContext();
 
 const CoinContextProvider = ({children}) => {
 
-  const {allcoin, setCurrency} = Usefetch();  
+  const {allcoin, currency, setCurrency} = Usefetch();  
+  const [searchVal, setsearchVal] = useState('')
 
   const coinValue = {
-    allcoin, setCurrency
+    allcoin, setCurrency, currency, searchVal, setsearchVal
   }
 
   return (
