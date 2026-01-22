@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { HiChevronDown } from 'react-icons/hi2'
+import { CoinContext } from '../context/CoinContext';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/Components/ui/dropdown-menu"
 
 const Hero = () => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState('');
+  const {setsearchVal, allcoin} = useContext(CoinContext)
+
+  function clickHandler(e){
+    e.preventDefault()
+    setsearchVal(value);
+    setValue('');
+  }
+
+  function ddbtn(ddvalue){
+    setsearchVal(ddvalue)
+  }
 
   return (
     <div className="h-[91vh] w-full bg-cover bg-center" style={{ backgroundImage: "url('/imgs/hero.jpg')" }}>
@@ -15,8 +28,17 @@ const Hero = () => {
           <input className='w-[40vw] focus:outline-none caret-gray-400' type="text" placeholder='Type crypto to see price...' 
           value={value} onChange={(d)=>setValue(d.target.value)}/>
           <div className='flex justify-between items-center'>
-            <div className='text-sm flex items-center gap-1'>All Coins <HiChevronDown /></div>
-            <button className='bg-gray-500 px-2 py-1 rounded-lg text-gray-300'>Search</button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className='text-sm flex items-center gap-1 focus:outline-none'>All Coins <HiChevronDown /></button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-[#1b1b1b]">
+                 {allcoin.map((data, index)=>(
+                   <DropdownMenuItem key={index} onClick={()=>ddbtn(data.name)}>{data.name}</DropdownMenuItem> 
+                 ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <button onClick={clickHandler} className='bg-gray-500 px-2 py-1 rounded-lg text-gray-300'>Search</button>
           </div>
         </form>
       </div>
