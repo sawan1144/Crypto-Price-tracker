@@ -5,11 +5,11 @@ export const CoinContext = createContext();
 
 const CoinContextProvider = ({children}) => {
 
-  const {allcoin, currency, setCurrency} = Usefetch();  
+  const {allcoin, currency, setCurrency, loading} = Usefetch();  
   const [searchVal, setsearchVal] = useState('')
 
   const coinValue = {
-    allcoin, setCurrency, currency, searchVal, setsearchVal
+    allcoin, setCurrency, currency, searchVal, setsearchVal, loading
   }
 
   return (
