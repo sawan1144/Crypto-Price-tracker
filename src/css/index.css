@@ -13,3 +13,19 @@ body {
    color: white;
    font-family: 'Satoshi-Variable', 'Satoshi-Regular', sans-serif;
 }
+
+/* Width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 10px;
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280; /* gray-500 */
+}
