@@ -3,15 +3,17 @@ import Navbar from "./Components/Navbar"
 import Home from './pages/Home'
 import Coin from './pages/Coin'
 import Footer from "./Components/Footer"
+import ScrollToTop from "./Components/scrolltotop"
 
 function App() {
 
   return (
     <div>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/coins/:coinId" element={<Coin />} />
+        <Route path="/coin/:coinId" element={<Coin />} />
       </Routes>
       <Footer />
     </div>
