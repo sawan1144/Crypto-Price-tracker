@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar"
 import Home from './pages/Home'
 import Coin from './pages/Coin'
 import Footer from "./Components/Footer"
-import ScrollToTop from "./Components/scrolltotop"
+import ScrollToTop from "./Components/Scrolltotop"
 
 function App() {
 
