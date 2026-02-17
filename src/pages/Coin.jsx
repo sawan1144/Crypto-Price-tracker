@@ -58,7 +58,7 @@ const Coin = () => {
               </div>
               <div className='flex justify-between border-b border-gray-500'>
                 <p>24h Change</p>
-                <p>{coindata.market_data.price_change_24h_in_currency[currency.name].toFixed(2)}</p>
+                <p>{coindata.market_data.price_change_24h_in_currency[currency.name]?.toFixed(2) ?? "N/A"}</p>
               </div>
               <div className='flex justify-between border-b border-gray-500'>
                 <p>Total Supply</p>

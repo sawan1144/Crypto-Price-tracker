@@ -32,7 +32,7 @@ const Table = () => {
               <div className="font-semibold">{currency.symbol + " " + data.current_price.toLocaleString()}</div>
 
               <div className={`text-center ${data.price_change_percentage_24h > 0 ? "text-green-500" : "text-red-500"}`}>
-                {data.price_change_percentage_24h.toFixed(2)}% </div>
+                {data.price_change_percentage_24h?.toFixed(2) ?? "N/A"}% </div>
 
               <div className='text-right'>{currency.symbol + " " + data.market_cap.toLocaleString()}</div>
             </Link>
